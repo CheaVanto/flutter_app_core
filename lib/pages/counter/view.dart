@@ -24,6 +24,7 @@ class CounterPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              ElevatedButton(onPressed: () => controller.login("123456"), child: const Text("Webview")),
               // Text("${SR.hello.tr} : ${state.count}", style: TextStyle(fontSize: 50.sp),),
               ElevatedButton(onPressed: () => controller.login("123456"), child: const Text("正常登录")),
               ElevatedButton(onPressed: () => controller.login("654321"), child: const Text("错误登录")),

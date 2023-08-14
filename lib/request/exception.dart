@@ -12,15 +12,15 @@ class ApiException implements Exception {
 
   factory ApiException.fromDioError(DioError error) {
     switch (error.type) {
-      case DioErrorType.cancel:
+      case DioExceptionType.cancel:
         return BadRequestException(-1, "请求取消");
-      case DioErrorType.connectTimeout:
+      case DioExceptionType.connectionTimeout:
         return BadRequestException(-1, "连接超时");
-      case DioErrorType.sendTimeout:
+      case DioExceptionType.sendTimeout:
         return BadRequestException(-1, "请求超时");
-      case DioErrorType.receiveTimeout:
+      case DioExceptionType.receiveTimeout:
         return BadRequestException(-1, "响应超时");
-      case DioErrorType.response:
+      case DioExceptionType.badResponse:
         try {
 
           /// http错误码带业务错误信息

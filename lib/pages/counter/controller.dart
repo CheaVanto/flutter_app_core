@@ -23,7 +23,6 @@ class CounterController extends GetxController {
     update();
   }
 
-
   void login(String password) => request(() async {
     LoginParams params = LoginParams();
     params.username = "loongwind";
